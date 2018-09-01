@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>职位管理页面</title>
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/lib/bootstrap/css/examples/dashboard/dashboard.css">
+    <style>
+        th{
+            text-align: center !important;
+        }
+        td{
+        height:60px !important;
+        line-height: 60px !important;
+        text-align: center;
+        
+    }
+    td img{
+        width: 60px;
+        height: 60px;
+    }
+  
+    </style>
+</head>
+<body>
+
+    <header>
+
+    </header>
+  
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+              <li class="active"><a href="#">已有职位 <span class="sr-only">(current)</span></a></li>
+             <li data-toggle="modal" data-target="#addPosModal" ><a href="#">添加职位</a></li> 	
+        <!--         <button  data-toggle="modal" data-target="#addPosModal" class="btn btn-primary">添加</button> -->
+            </ul>  
+          </div>
+          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">详细</h1>
+  
+            <div class="row placeholders">
+              <div class="col-xs-6 col-sm-3 placeholder">
+                <img src="/img/dajl.gif" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                <h4 style="font-size:38px;">看</h4>
+                </div>
+              <div class="col-xs-6 col-sm-3 placeholder">
+                <img src="/img/dajl.gif" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                <h4 style="font-size:38px;">什</h4>
+                 </div>
+              <div class="col-xs-6 col-sm-3 placeholder">
+                <img src="/img/dajl.gif" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                <h4 style="font-size:38px;">么</h4>
+                 </div>
+              <div class="col-xs-6 col-sm-3 placeholder">
+                <img src="/img/dajl.gif" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                <h4 style="font-size:38px;">看</h4>
+                 </div>
+            </div>
+  
+            <h2 class="sub-header">职位详细</h2>
+            <div class="table-responsive">
+              <table  class="table table-stripped table-bordered list-table">
+                <thead>
+                  <tr>
+                    <th>序号</th>
+                    <th>公司LOGO</th>
+                    <th>职位</th>
+                    <th>岗位职责</th>
+                    <th>薪资</th>
+                    <th>地点</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>001</td>
+                    <td><img src="/img/dajl.gif"></td>
+                    <td>web前端开发</td>
+                    <td>负责前端</td>
+                    <td>10k</td>
+                    <td>成都</td>
+                    <td><a href="#" class="btn btn-danger" >删除</a>&nbsp;&nbsp;<a href=""data-toggle="modal" data-target="#changeModal" class="btn btn-success">修改</a></td>
+                  </tr>           
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+<!-- 添加职位的模态框 -->
+<div class="modal fade" id="addPosModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">添加职位</h4>
+        </div>
+        <div class="modal-body">
+          <form class="add-position-form">
+            <div class="form-group">
+              <label for="addLogo">公司LOGO</label>
+              <input type="file" class="form-control" name="logo" id="addLogo">
+            </div>
+            <div class="form-group">
+              <label for="addPositionName">职位名称</label>
+              <input type="text" class="form-control" name="name" id="addPositionName" placeholder="职位名称">
+            </div>
+            <div class="form-group">
+              <label for="addSalary">薪资</label>
+              <input type="text" class="form-control" name="salary" id="addSalary" placeholder="薪资">
+            </div>
+            <div class="form-group">
+              <label for="addCity">工作地点</label>
+              <input type="text" class="form-control" name="city" id="addCity" placeholder="工作地点">
+            </div>
+  
+            <div class="form-group">
+              <label for="addDuty">工作职责</label>
+              <input type="text" class="form-control" name="duty" id="addDuty" placeholder="工作职责">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary btn-add-pos ">添加</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 修改模态框 -->
+<div class="modal fade" id="changeModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">修改职位</h4>
+            </div>
+            <div class="modal-body">
+              <form class="add-position-form">
+                <div class="form-group">
+                  <label for="changeLogo">公司LOGO</label>
+                  <input type="file" class="form-control" name="logo" id="changeLogo">
+                </div>
+                <div class="form-group">
+                  <label for="addPositionName">修改职位名称</label>
+                  <input type="text" class="form-control" name="name" id="changePositionName" placeholder="职位名称">
+                </div>
+                <div class="form-group">
+                  <label for="addSalary">修改薪资</label>
+                  <input type="text" class="form-control" name="salary" id="changeSalary" placeholder="薪资">
+                </div>
+                <div class="form-group">
+                  <label for="addCity">修改工作地点</label>
+                  <input type="text" class="form-control" name="city" id="changeCity" placeholder="工作地点">
+                </div>
+      
+                <div class="form-group">
+                  <label for="addDuty">修改工作职责</label>
+                  <input type="text" class="form-control" name="duty" id="changeDuty" placeholder="工作职责">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+              <button type="button" class="btn btn-primary btn-add-pos ">修改</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script src="/lib/jquery/jquery-3.2.1.min.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/lib/ejs/ejs.js"></script>
+    <script src="/js/common/header.js"></script>
+</body>
+</html>
